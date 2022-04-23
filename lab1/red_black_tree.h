@@ -24,10 +24,10 @@ class red_black_tree
 public:
 	void insert(int key, int value);
 	void remove(int key);
-	int find(int key);
+	red_black_tree_node* find(int key);
+	red_black_tree_node* find_help(red_black_tree_node* node, int key);
 	ListOfNum get_keys();
 	ListOfNum get_values();
 	void clear();
 	void print(red_black_tree_node* node);
-	//red_black_tree_node* root;
 };

@@ -64,26 +64,6 @@ void red_black_tree::insert(int key, int value)
 	red_black_tree_node* uncle = p->parent;
 	while (node->parent != nullptr && node->parent->color == colorEnum::red)
 	{
-		/*if (node->parent == node->parent->parent->right_side)
-		{
-			uncle = node->parent->parent->left_side;
-			if (uncle->color == red)
-			{
-				uncle->color = black;
-				node->parent->color = black;
-				node->parent->parent->color = red;
-				node = node->parent->parent;
-			}
-			else {
-				if (node == node->parent->left_side) {
-					node = node->parent;
-					right_turn(node);
-				}
-				node->parent->color = black;
-				node->parent->parent->color = red;
-				left_turn(node->parent->parent);
-			}
-		}*/
 		if (p == uncle->left_side)
 		{
 			if (uncle->right_side->color == colorEnum::red)
@@ -144,6 +124,18 @@ void red_black_tree::print(red_black_tree_node* node)
 	print(node->right_side);
 }
 
+red_black_tree_node* red_black_tree::find(int key)
+{
+	return find_help(root, key);
+}
+
+red_black_tree_node* red_black_tree::find_help(red_black_tree_node* temp, int key)
+{
+	if (temp == NULL || temp->key == key) return temp;
+	else if (key > temp->key) return find_help(temp->right_side, key);
+		else return find_help(temp->left_side, key);
+}
+
 int main()
 {
 	int value = 50, key[] = { 55,40,65,60,75,57 };
@@ -152,6 +144,26 @@ int main()
 	for (int i = 0; i < 6; i++) {
 		map.insert(key[i], key[i]);
 	}
-	//red_black_tree_node* node;
-	map.print(root);
+	//map.print(root);
+	map.find(2);
 }
+/*if (node->parent == node->parent->parent->right_side)
+{
+	uncle = node->parent->parent->left_side;
+	if (uncle->color == red)
+	{
+		uncle->color = black;
+		node->parent->color = black;
+		node->parent->parent->color = red;
+		node = node->parent->parent;
+	}
+	else {
+		if (node == node->parent->left_side) {
+			node = node->parent;
+			right_turn(node);
+		}
+		node->parent->color = black;
+		node->parent->parent->color = red;
+		left_turn(node->parent->parent);
+	}
+}*/
