@@ -36,14 +36,14 @@ namespace UnitTest1
 		}
 		TEST_METHOD(Test_get_keys)
 		{
-			int array[6] = { 1,12,45};
+			int array[3] = { 53,42,63 };
 			for (int i = 0; i < 3; i++) map.insert(array[i], array[i]);
 			ListOfNum list_keys;
 			list_keys = map.get_keys();
-			Assert::IsTrue(list_keys.contains(1) && list_keys.contains(12) && list_keys.contains(45) && list_keys.get_size() == 3);
+			Assert::IsTrue(list_keys.contains(53) && list_keys.contains(42) && list_keys.contains(63) && list_keys.get_size() == 3);
 			ListOfNum list_value;
 			list_value = map.get_values();
-			Assert::IsTrue(list_value.contains(55) && list_value.contains(40) && list_value.contains(65) && list_value.get_size() == 3);
+			Assert::IsTrue(list_value.contains(53) && list_value.contains(42) && list_value.contains(63) && list_value.get_size() == 3);
 		}
 	};
 }
