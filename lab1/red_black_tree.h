@@ -22,12 +22,13 @@ struct red_black_tree_node
 class red_black_tree
 {
 public:
+	int size = 0;
 	void insert(int key, int value);
 	void remove(int key);
 	red_black_tree_node* find(int key);
-	red_black_tree_node* find_help(red_black_tree_node* node, int key);
 	ListOfNum get_keys();
 	ListOfNum get_values();
 	void clear();
+	void clear_help(red_black_tree_node* x);
 	void print(red_black_tree_node* node);
 };
