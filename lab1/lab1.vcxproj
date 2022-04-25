@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MethodsDeclaration.h" />
+    <ClInclude Include="list.h" />
     <ClInclude Include="red_black_tree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImplementingClassMethods.cpp" />
-    <ClCompile Include="map.cpp" />
+    <ClCompile Include="list_methods.cpp" />
+    <ClCompile Include="red_black_tree_methods.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MethodsDeclaration.h">
+    <ClInclude Include="list.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="red_black_tree.h">
@@ -23,10 +23,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImplementingClassMethods.cpp">
+    <ClCompile Include="list_methods.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="map.cpp">
+    <ClCompile Include="red_black_tree_methods.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

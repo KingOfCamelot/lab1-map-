@@ -1,5 +1,5 @@
 #pragma once
-#include "MethodsDeclaration.h"
+#include "list.h"
 
 enum colorEnum
 {
